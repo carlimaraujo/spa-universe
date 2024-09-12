@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --txt-color: #e1e1e6;
+  --nav-color: #c4c4cc;
+  --nav-selected: #fff;
+  --txt-button-hover: #02799d;
+}
+
+body {
+  font-family: "Roboto", system-ui;
+  color: var(--txt-color);
+  font-style: normal;
+  height: 100vh;
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Nav */
+
+nav {
+  display: flex;
+  gap: 3.227rem;
+
+  padding: 4rem 0 4rem 7.2rem;
+}
+
+nav ol {
+  list-style-type: none;
+
+  display: flex;
+  gap: 3.2rem;
+  text-align: center;
+}
+
+nav li {
+  margin: auto;
+}
+
+nav li a {
+  text-decoration: none;
+
+  color: var(--nav-color);
+  font-size: 2.1667rem;
+  font-weight: 400;
+  line-height: 2.1667rem;
+
+  transition: 0.5s;
+}
+
+nav li a:hover,
+body:has(.home) nav ol li:nth-child(1) a,
+body:has(.universe) nav ol li:nth-child(2) a,
+body:has(.exploration) nav ol li:nth-child(3) a {
+  color: var(--nav-selected);
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+#app {
+  display: grid;
+  height: calc(100% - 125px);
+}
+
+/* Home */
+
+body:has(.home) {
+  background-image: url("./assets/mountains-universe-1.png");
+}
+
+h1 {
+  font-size: 4.8rem;
+  font-weight: 700;
+  line-height: 125%;
+}
+
+.home {
+  margin: auto;
+  text-align: center;
+}
+
+.home button {
+  border: 0.2rem solid var(--txt-color);
+  border-radius: 0.5rem;
+  background-color: transparent;
+  padding: 1.2rem 3.2rem;
+
+  margin: 2.4rem auto 0;
+
+  transition: 0.5s;
+}
+
+.home button:hover {
+  background: var(--txt-color);
+}
+
+.home button a {
+  text-decoration: none;
+
+  color: var(--txt-color);
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 2.4rem; /* 171.429% */
+}
+
+.home button:hover a {
+  color: var(--txt-button-hover);
+  transition: 0.5s;
+}
+
+/* Universe, Exploration */
+.universe,
+.exploration {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  width: 64.8rem;
+
+  margin: 6.3rem 0 0 10.2rem;
+}
+
+.universe p,
+.exploration p {
+  color: var(--txt-color);
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 160%;
+}
+
+body:has(.universe) {
+  background-image: url("./assets/mountains-universe02.png");
+}
+
+body:has(.exploration) {
+  background-image: url("./assets/mountains-universe-3.png");
+}
